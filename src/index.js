@@ -8,6 +8,7 @@ const app = new Koa();
 // use historyApiFallback
 app.use(historyApiFallback());
 
+// set your website folder
 app.use(serve(path.resolve(__dirname,'../build')));
 app.use(serve(path.resolve(__dirname,'../www')));
 app.use(serve(path.resolve(__dirname,'../dist')));
@@ -16,5 +17,5 @@ app.use(serve(path.resolve(__dirname,'../static')));
 
 const post = 3000;
 app.listen(post, () => {
-    console.log(`服务器在${post}端口启动成功~`);
+    console.log(`The server started successfully on port ${post}`);
 })
